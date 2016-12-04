@@ -11,6 +11,25 @@
   <body>
     <%= link_to "Home", root_path %>
     <%= link_to "About", about_path %>
+    <%= link_to "New trip", new_trip_path %>
+    <% if user_signed_in? %>
+        Hello <%= current_user.name %>
+        <%= link_to 'Sign out', sessions_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_path %>
+        <%= link_to 'Sign In', new_session_path %>
+        <!-- <li><% if user_signed_in?%>
+          <li><%= link_to "Edit User Profile", edit_user_path(current_user) %></li>
+          <li><%= link_to "Edit User Password", edit_user_passwords_path(current_user) %></li>
+          <li><%= link_to 'Sign out', sessions_path, method: :delete %></li>
+          <li>Hello <%= current_user.first_name %></li>
+          <li><% else %></li>
+          <li><%= link_to 'Sign In', new_session_path %></li>
+          <li><% end %></li> -->
+
+      <% end %>
+
     <%= yield %>
+    <%= notice || alert %>
   </body>
 </html>
