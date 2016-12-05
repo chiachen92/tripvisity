@@ -17,7 +17,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find params[:id]
-    @commment = Comment.new
+    @comment = Comment.new
   end
 
   def index
@@ -47,7 +47,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:destination, :start_date, :end_date)
+    params.require(:trip).permit(:destination, :start_date, :end_date, :user_id)
   end
 
   # def picture_params
