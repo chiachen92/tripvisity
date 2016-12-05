@@ -1,9 +1,5 @@
 class CommentsController < ApplicationController
 
-  def new
-    @comment = Comment.new
-  end
-
   def create
     @trip = Trip.find params[:trip_id]
     @comment = Comment.new comment_params
@@ -20,7 +16,7 @@ class CommentsController < ApplicationController
   #   @trip = Trip.find params[:trip_id]
   #   @comment = Comment.new
   # end
-  #
+
   # def index
   #   @comment = Comment.order(created_at: :desc)
   # end

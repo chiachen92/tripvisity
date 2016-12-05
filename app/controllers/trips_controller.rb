@@ -17,6 +17,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find params[:id]
+    @commment = Comment.new
   end
 
   def index
