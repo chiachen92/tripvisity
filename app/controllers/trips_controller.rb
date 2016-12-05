@@ -49,4 +49,8 @@ class TripsController < ApplicationController
     params.require(:trip).permit(:destination, :start_date, :end_date)
   end
 
+  # def picture_params
+  #   params.require(:picture).permit(:image, :caption, :trip_id)
+  # end
+
 end

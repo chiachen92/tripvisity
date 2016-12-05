@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   root 'home#homepage'
   get '/about' => 'home#about'
 
-  resources :trips
+  resources :trips do
+    resources :pictures
+  end
+  
   resources :users
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
-  
+
 end

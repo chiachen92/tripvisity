@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # has_many :trips
   has_secure_password
   before_save {self.email = email.downcase}
 

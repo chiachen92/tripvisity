@@ -1,0 +1,12 @@
+<h2>Add a picture</h2>
+<%= render 'shared/errors', obj: @picture %>
+<%= form_for @picture, url: trip_pictures_path(@trip) do |f|%>
+<%= f.hidden_field :trip_id, :value => @trip.id %>
+<div class="form-group">
+    <%= f.file_field :image %>
+  </div>
+  <div class='form-group'>
+    <%= f.text_field :caption, :placeholder => 'Caption'  %>
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

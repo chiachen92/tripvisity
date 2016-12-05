@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'faker'
-
+gem 'paperclip', '~> 5.0.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
