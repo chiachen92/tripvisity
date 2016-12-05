@@ -5,8 +5,10 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :pictures
+    resources :comments
   end
-  
+
+
   resources :users
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
