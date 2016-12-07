@@ -8,7 +8,7 @@ class BudgetsController < ApplicationController
     @budget.user = current_user
     if @budget.save
       flash[:success] = "Budget is saved successfully"
-      redirect_to budgets_path(@budget)
+      redirect_to budgets_path
     else
       render :new
     end
@@ -19,7 +19,7 @@ class BudgetsController < ApplicationController
   # end
 
   def index
-    @budget = Budget.order(created_at: :desc)
+    @budgets = Budget.order(created_at: :desc)
   end
 
   def edit
@@ -45,7 +45,7 @@ class BudgetsController < ApplicationController
   private
 
   def budget_params
-    params.require(:budget).permit([:item, :price, :user_id])
+    params.require(:budget).permit([:item, :price])
   end
 
 end

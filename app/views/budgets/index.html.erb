@@ -1,10 +1,17 @@
-<div class="container">
-  <h3>Budget Page</h3>
-  <% @budgets.each do |budget| %>
-    <div class="row">
-      <%= budget.item %>
-      <%= budget.price %>
-    </div>
-    <hr>
-  <% end %>
+<div align="center">
+<h3>How much is this trip going to cost?</h3>
+<table cellspacing='0'>
+<table class="container">
+  <thead>
+  	<tr>
+  		<h2><th>Item</th></h2>
+  	  <h2><th>Price</th></h2>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><% @budgets.each do |budget| %></tr>
+      <td><%= budget.item %></td>
+      <td><%= budget.price %></td>
+      <% end %>
+    </tbody>
 </div

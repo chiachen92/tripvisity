@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :trips, dependent: :nullify
   has_many :comments, dependent: :nullify
-  has_many :budgets
+  has_many :budgets, dependent: :destroy
 
   has_secure_password
   before_save {self.email = email.downcase}
