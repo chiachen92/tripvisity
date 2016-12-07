@@ -7,7 +7,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new trip_params
-    @trip.user_id = session[:user_id]
+    # @trip.user_id = session[:user_id]
+    @trip.user = current_user
     if @trip.save
       flash[:success] = "Trip was successfully  created"
       redirect_to trip_path(@trip)

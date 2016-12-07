@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-
+  resources :budgets
   resources :users
+
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end

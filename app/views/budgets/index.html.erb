@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Budget Page</h3>
+  <% @budgets.each do |budget| %>
+    <div class="row">
+      <%= budget.item %>
+      <%= budget.price %>
+    </div>
+    <hr>
+  <% end %>
+</div

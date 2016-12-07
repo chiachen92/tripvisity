@@ -39,16 +39,16 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %><br>
   </div>
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Publish Tip"%></p>
   <% end %>
 </div>
 
 <div class="container">
-  <h4>All Comments</h4>
+  <h3>All Comments</h3>
   <% @trip.comments.each do |comment| %>
     <div class="row">
       <%= comment.body %>
-      <hr>
     </div>
+    <hr>
   <% end %>
 </div
