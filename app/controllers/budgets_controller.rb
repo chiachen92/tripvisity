@@ -1,8 +1,4 @@
 class BudgetsController < ApplicationController
-  def new
-    @budget = Budget.new
-  end
-
   def create
     @budget = Budget.new budget_params
     @budget.user = current_user
@@ -19,6 +15,7 @@ class BudgetsController < ApplicationController
   # end
 
   def index
+    @budget = Budget.new
     @budgets = Budget.order(created_at: :desc)
   end
 
