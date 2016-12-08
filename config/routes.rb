@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :pictures
-    resources :comments
+    resources :comments 
+      # resources :votes
   end
 
   resources :budgets do
