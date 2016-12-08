@@ -8,7 +8,12 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :budgets
+  resources :budgets do
+    resources :status, only: [:create] do
+      patch :update, on: :collection
+    end
+  end
+
   resources :users
 
   resources :sessions, only: [:new, :create] do

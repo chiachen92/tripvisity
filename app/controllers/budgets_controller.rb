@@ -1,4 +1,9 @@
 class BudgetsController < ApplicationController
+
+  # def new
+  #   @budget = Budget.new
+  # end
+
   def create
     @budget = Budget.new budget_params
     @budget.user = current_user
@@ -33,11 +38,17 @@ class BudgetsController < ApplicationController
   end
 
   def destroy
-      @budget = Budget.find params[:id]
-      @budget.destroy
-      flash[:danger] = "Budget was deleted"
-      redirect_to budgets_path
+    @budget = Budget.find params[:id]
+    @budget.destroy
+    flash[:danger] = "Budget was deleted"
+    redirect_to budgets_path
   end
+
+  # def complete
+  #   @budget = Budget.find params[:budget_id]
+  #   @budget.update_attribute(:status, [true|false])
+  #   redirect_to budgets_path
+  # end
 
   private
 

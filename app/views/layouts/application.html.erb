@@ -13,7 +13,7 @@
     <%= link_to "About", about_path %>
     <%= link_to "New trip", new_trip_path %>
     <%= link_to "All trips", trips_path %>
-    <%= link_to "Budgets", new_budget_path %>
+    <%= link_to "Budgets", budgets_path %>
     <% if user_signed_in? %>
         Hello <%= current_user.name %>
         <%= link_to 'Sign out', sessions_path, method: :delete %>
