@@ -6,9 +6,9 @@ class VotesController < ApplicationController
     vote.user = current_user
     vote.comment = comment
     if vote.save
-      redirect_to trip_comment_path(comment, trip), notice: "Vote!"
+      redirect_to trip_comment_path(comment), notice: "Vote!"
     else
-      redirect_to trip_comment_path(comment, trip), alert: vote.error_description
+      redirect_to trip_comment_path(comment), alert: vote.error_description
     end
   end
 
@@ -21,10 +21,14 @@ class VotesController < ApplicationController
   def update
     comment = vote.comment
     if vote.update vote_params
-      redirect_to trip_comment_path(comment, trip)
+      redirect_to trip_comment_path(comment)
     else
-      redirect_to trip_comment_path(comment, trip), alert: vote.error_description
+      redirect_to trip_comment_path(comment), alert: vote.error_description
     end
+  end
+
+  def search_support_path
+    redirect_to trips_path
   end
 
   private

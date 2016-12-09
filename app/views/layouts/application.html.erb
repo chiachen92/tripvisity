@@ -11,6 +11,7 @@
   <body>
     <%= link_to "Home", root_path %>
     <%= link_to "About", about_path %>
+    <%= link_to "" %>
     <%= link_to "New trip", new_trip_path %>
     <%= link_to "All trips", trips_path %>
     <%= link_to "Budgets", budgets_path %>
@@ -28,8 +29,13 @@
           <li><% else %></li>
           <li><%= link_to 'Sign In', new_session_path %></li>
           <li><% end %></li> -->
-
-      <% end %>
+    <% end %>
+    <%#= form_tag search_trip_path, :method => 'get' do%>
+      <p>
+        <%#= text_field_tag :keyword, params[:keyword] %>
+        <%#= submit_tag "Search", :name => nil %>
+      </p>
+    <%#= end %>
 
     <%= yield %>
     <%= notice || alert %>

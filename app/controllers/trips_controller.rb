@@ -18,20 +18,22 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find params[:id]
+    find_params
     @comment = Comment.new
   end
 
   def index
     @trips = Trip.order(created_at: :desc)
+    # @trips = Trip.search(params[:keyword]).page(params[:page]).per(5)
+
   end
 
   def edit
-    @trip = Trip.find params[:id]
+    find_params
   end
 
   def update
-    @trip = Trip.find params[:id]
+    find_params
     if @trip.update trip_params
       redirect_to trip_path(@trip)
     else
@@ -41,12 +43,20 @@ class TripsController < ApplicationController
 
 
   def destroy
-    @trip = Trip.find params[:id]
+    find_params
     @trip.destroy
     redirect_to trips_path
   end
 
+  # def search_trip
+  #   redirect_to trips_path
+  # end
+
   private
+
+  def find_params
+    @trip = Trip.find params[:id]
+  end
 
   def trip_params
     params.require(:trip).permit(:destination, :start_date, :end_date, :user_id)
