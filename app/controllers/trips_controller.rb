@@ -23,8 +23,9 @@ class TripsController < ApplicationController
   end
 
   def index
-    @trips = Trip.order(created_at: :desc)
-    # @trips = Trip.search(params[:keyword]).page(params[:page]).per(5)
+    # @trips = Trip.order(created_at: :desc)
+
+    @trips = Trip.search(params[:keyword]).page(params[:page]).per(5)
 
   end
 
@@ -48,9 +49,9 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
-  # def search_trip
-  #   redirect_to trips_path
-  # end
+  def search_trip
+    redirect_to trips_path
+  end
 
   private
 

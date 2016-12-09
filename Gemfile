@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'faker'
 gem 'paperclip', '~> 5.0.0'
 gem 'font-awesome-rails'
+gem 'kaminari'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
