@@ -8,10 +8,6 @@ class Budget < ApplicationRecord
     self.status ||= false
   end
 
-  # def self.total_price
-  #   all.map { |item| item.price }.sum
-  # end
-
   def total
     Budget.sum(:price)
   end

@@ -16,7 +16,8 @@ module ApplicationHelper
               :patch
             end
     path = if vote.nil?
-      trip_comment_votes_path(comment, vote: { is_up: true })
+
+trip_comment_votes_path(comment.trip, comment, vote: { is_up: true })
     else
       vote_path(vote, vote: { is_up: true })
     end
@@ -37,7 +38,8 @@ module ApplicationHelper
               :patch
             end
     path = if vote.nil?
-      trip_comment_votes_path(comment, vote: { is_up: false })
+
+trip_comment_votes_path(comment.trip, comment, vote: { is_up: false })
     else
       vote_path(vote, vote: { is_up: false })
     end

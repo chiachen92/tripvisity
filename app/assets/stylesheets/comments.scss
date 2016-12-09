@@ -1,3 +1,25 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.vote-link {
+  color: Grey;
+}
+
+.vote-link.vote-up {
+  color: Orange;
+}
+
+.vote-link.vote-down {
+  color: Blue;
+}
+
+.vote-widget {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > a {
+    margin: -0.8em 0;
+  }
+}

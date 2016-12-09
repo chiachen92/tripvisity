@@ -6,5 +6,8 @@ class Comment < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_many :voters, through: :votes, source: :user
 
-
+  def vote_value
+  votes.up.count - votes.down.count
+  end
+  
 end
