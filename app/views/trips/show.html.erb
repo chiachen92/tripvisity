@@ -51,4 +51,13 @@
     </div>
     <hr>
   <% end %>
-</div
+</div>
+
+<div class="row">
+<div class="col-xs-2 col-sm-1">
+<section class="vote-widget">
+  <%= upvote_link @comment %>
+  <h2><%= @comment.vote_value %></h2>
+  <%= downvote_link @comment %>
+</section>
+</div>

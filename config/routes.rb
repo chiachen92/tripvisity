@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :pictures
-    resources :comments 
-      # resources :votes
+    resources :comments do
+      resources :votes, shallow: true
+    end
   end
 
   resources :budgets do

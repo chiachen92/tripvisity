@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206120536) do
+ActiveRecord::Schema.define(version: 20161208093042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,9 +65,21 @@ ActiveRecord::Schema.define(version: 20161206120536) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.boolean  "is_up"
+    t.integer  "user_id"
+    t.integer  "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_votes_on_comment_id", using: :btree
+    t.index ["user_id"], name: "index_votes_on_user_id", using: :btree
+  end
+
   add_foreign_key "budgets", "users"
   add_foreign_key "comments", "trips"
   add_foreign_key "comments", "users"
   add_foreign_key "pictures", "trips"
   add_foreign_key "trips", "users"
+  add_foreign_key "votes", "comments"
+  add_foreign_key "votes", "users"
 end
