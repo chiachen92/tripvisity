@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
+  TRIPS_PER_PAGE = 5
   before_action :authenticate_user, except: [:index, :show]
+
 
   def new
     @trip = Trip.new
@@ -7,8 +9,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new trip_params
-    # @trip.user_id = session[:user_id]
-    @trip.user = current_user
+    @trip.user_id = session[:user_id]
+    # @trip.user = current_user
     if @trip.save
       flash[:success] = "Trip was successfully  created"
       redirect_to trip_path(@trip)
@@ -23,10 +25,11 @@ class TripsController < ApplicationController
   end
 
   def index
-    # @trips = Trip.order(created_at: :desc)
-
-    @trips = Trip.search(params[:keyword]).page(params[:page]).per(5)
-
+    if params[:search]
+      @trips = Trip.search(params[:search]).order(created_at: :desc).paginate(page: params[:page], per_page: TRIPS_PER_PAGE)
+    else
+      @trips = Trip.order(created_at: :desc).paginate(page: params[:page], per_page: TRIPS_PER_PAGE)
+    end
   end
 
   def edit

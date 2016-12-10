@@ -1,5 +1,13 @@
 <h1>List all trips</h1>
-  <% @trips.each do |trip| %>
-    <h2><%= link_to trip.destination, trip_path(trip) %></h2>
+<div class="search">
+  <%= form_tag trips_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search" %>
+    </p>
   <% end %>
-<%= paginate @trips %>
+</div>
+<% @trips.each do |trip| %>
+  <h2><%= link_to trip.destination, trip_path(trip) %></h2>
+  <% end %>
+<%= will_paginate %>
