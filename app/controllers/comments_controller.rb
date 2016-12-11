@@ -12,28 +12,28 @@ class CommentsController < ApplicationController
     end
   end
 
-  # def show
-  #   @trip = Trip.find params[:trip_id]
-  #   @comment = Comment.new
-  # end
+  def show
+    @trip = Trip.find params[:trip_id]
+    @comment = Comment.new
+  end
 
-  # def index
-  #   @comment = Comment.order(created_at: :desc)
-  # end
-  #
-  # def edit
-  #   @comment = Comment.find params[:id]
-  # end
-  #
-  # def update
-  #   @comment = Comment.find params[:id]
-  #   if @comment.update = Comment comment_params
-  #     flash[:success] = "Comment was successfully updated"
-  #     redirect_to trip_comment_path(@comment)
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def index
+    @comment = Comment.order(created_at: :desc)
+  end
+
+  def edit
+    @comment = Comment.find params[:id]
+  end
+
+  def update
+    @comment = Comment.find params[:id]
+    if @comment.update
+      flash[:success] = "Comment was successfully updated"
+      redirect_to trip_comment_path(@comment)
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @trip = Trip.find params[:trip_id]

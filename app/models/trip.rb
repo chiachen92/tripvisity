@@ -6,7 +6,7 @@ class Trip < ApplicationRecord
   has_many :pictures, dependent: :destroy
   validates :destination, presence: true
 
-  def self.search(keyword)
+  def self.search(search)
   where("destination ILIKE ?", "%#{search}%")
   end
 

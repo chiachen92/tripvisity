@@ -33,11 +33,13 @@ class VotesController < ApplicationController
 
   private
   def vote_params
-    params.require(:vote).permit(:is_up)
+    params.require(:vote).permit(:is_up, :comment_id)
   end
 
 
   def vote
     @vote ||= Vote.find params[:id]
   end
+
+
 end

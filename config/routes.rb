@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :charges
 
   # resources :sessions, only: [:new, :create] do
   #   delete :destroy, on: :collection
