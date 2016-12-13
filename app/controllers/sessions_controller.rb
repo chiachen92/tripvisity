@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
 
     # @user = User.find_by_email params[:email]
     user = User.from_omniauth(env["omniauth.auth"])
-    # if @user && @user.authenticate(params[:password])
+    if user && env["omniauth.auth"].present?
       session[:user_id] = user.id
       redirect_to root_path, notice: 'Signed In'
     else
       flash.now[:alert] = 'Wrong credentials'
       render :new
-
+    end
 
   end
 
@@ -23,3 +23,6 @@ class SessionsController < ApplicationController
   end
 
 end
+
+
+# user.authenticate(params[:password])
