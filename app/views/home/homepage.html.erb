@@ -1,2 +1,77 @@
-<div class= "center jumbotron">
-  <h1>Tripvisity</h1>
+
+
+          <div class="content">
+            <h1 class= "tripvisity">Tripvisity</h1>
+          </div>
+
+          <div id="container">
+              <ul id="slider">
+                  <li class="slide selected"><img src="images/slideOne.png" width="700" height="300" alt=""/></li>
+                  <li class="slide"><img src="images/slideTwo.png" width="700" height="300" alt=""/></li>
+                  <li class="slide"><img src="images/slideThree.png" width="700" height="300" alt=""/></li>
+                  <li class="slide"><img src="images/slideFour.png" width="700" height="300" alt=""/></li>
+              </ul>
+              <button id="prev">Previous</button>
+              <button id="next">Next</button>
+              <div style="clear:both"></div>
+          </div>
+
+
+          <script type="text/javascript">
+          // Have the first and last li's set to a variable
+          var $first = $('li:first', 'ul'),
+              $last = $('li:last', 'ul');
+
+
+          // Set time intervall
+
+          $("#next").click(function () {
+
+              var $next,
+                  $selected = $(".selected");
+              // get the selected item
+              // If next li is empty , get the first
+              $next = $selected.next('li').length ? $selected.next('li') : $first;
+              $selected.removeClass("selected").fadeOut('fast');
+              $next.addClass('selected').fadeIn('fast');
+          });
+
+          $("#prev").click(function () {
+              var $prev,
+                  $selected = $(".selected");
+              // get the selected item
+              // If prev li is empty , get the last
+              $prev = $selected.prev('li').length ? $selected.prev('li') : $last;
+              $selected.removeClass("selected").fadeOut('fast');
+              $prev.addClass('selected').fadeIn('fast');
+          });
+
+          </script>
+
+<div class= "footer">
+  <div class="connect">
+  <h3>Connect With Us<h3>
+  </div>
+  <a href= "https://www.facebook.com/jen.yang.9041" class="fb" id="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href= "" class="twitter" id="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+</div>
+
+<script>
+$('.bxslider').bxSlider({
+mode: 'fade',
+captions: true
+});
+</script>
+
+<script type= "text/javascript">
+  $(document).ready(function () {
+    $('.flexslider').flexslider({
+        animation: 'fade',
+        controlsContainer: '.flexslider'
+    });
+  });
+</script>
+<script>
+$( ".connect" ).fadeIn(4000);
+
+</script>

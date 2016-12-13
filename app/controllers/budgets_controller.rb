@@ -11,7 +11,8 @@ class BudgetsController < ApplicationController
       flash[:success] = "Budget is saved successfully"
       redirect_to budgets_path
     else
-      render :new
+      flash[:danger] = "Unable to save budget"
+      redirect_to budgets_path
     end
   end
 

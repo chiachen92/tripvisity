@@ -12,10 +12,11 @@ class CommentsController < ApplicationController
     end
   end
 
-  def show
-    @trip = Trip.find params[:trip_id]
-    @comment = Comment.new
-  end
+  # def show
+  #   @trip = Trip.find params[:trip_id]
+  #   @comment = Comment.new
+  #   render 'trips/show'
+  # end
 
   def index
     @comment = Comment.order(created_at: :desc)
@@ -29,7 +30,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find params[:id]
     if @comment.update
       flash[:success] = "Comment was successfully updated"
-      redirect_to trip_comment_path(@comment)
+      redirect_to trip_path(@comment.trip_id)
     else
       render :edit
     end

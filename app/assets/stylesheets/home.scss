@@ -1,3 +1,225 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@font-face
+{
+  font-family: "coolfont";
+  src: url("coolfont.ttf");
+}
+
+
+.bg
+{
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.content
+{
+  position: relative;
+  text-align: center;
+  // top: 180px;
+  height: 100vh;
+  background: url(home2.jpg) no-repeat top center;
+  background-size: cover;
+  margin-top: -20px
+
+}
+
+
+.tripvisity
+{
+  font-family: "coolfont";
+  font-size: 80px;
+  line-height: 6.5 !important
+}
+
+#social
+{
+  font-size: 40px;
+  margin: 10px;
+
+}
+.fb:hover
+{
+  color:#3B5A9A
+}
+
+.twitter:hover
+{
+  color:#0084b4
+}
+
+.footer
+{
+  text-align:center;
+  background-color:#000000;
+  height: 200px;
+  width: 100%;
+}
+
+h3
+{
+  color:#ffffff;
+  padding: 15px;
+  margin-top: 0px !important;
+  font-family: Chalkduster, fantasy;
+  margin-bottom: -10px
+}
+
+.connect
+{
+  display:none
+}
+
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  { outline: none; }
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.flexslider a img { outline: none; border: none; }
+
+.flexslider {
+	margin: 0;
+	padding: 0;
+}
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides > li {
+	display: none;
+	-webkit-backface-visibility: hidden;
+}
+
+.flexslider .slides img {
+	width: 100%;
+	display: block;
+
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+/* Clearfix for the .slides element */
+.slides:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+html[xmlns] .slides { display: block; }
+* html .slides { height: 1%; }
+
+
+
+/* Theme Styles */
+.flexslider {
+	position: relative;
+	zoom: 1;
+	padding: 10px;
+	background: #ffffff;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+	-moz-box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+	box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+}
+
+/* Edit it if you want */
+.flex-container {
+	min-width: 150px;
+	max-width: 960px;
+}
+
+.flexslider .slides { zoom: 1; }
+
+
+
+/* Direction Nav */
+.flex-direction-nav a {
+	display: block;
+	position: absolute;
+	margin: -17px 0 0 0;
+	width: 35px;
+	height: 35px;
+	top: 50%;
+	cursor: pointer;
+	text-indent: -9999px;
+	z-index: 9999;
+
+	background-color: #82d344;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#82d344), to(#51af34));
+	background-image: -webkit-linear-gradient(top, #82d344, #51af34);
+	background-image: -moz-linear-gradient(top, #82d344, #51af34);
+	background-image: -o-linear-gradient(top, #82d344, #51af34);
+	background-image: linear-gradient(to bottom, #82d344, #51af34);
+}
+
+.flex-direction-nav a:before {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 9px;
+	height: 13px;
+	top: 11px;
+	left: 11px;
+	background: url(http://designmodo.com/demo/responsiveslider/img/arrows.png) no-repeat;
+}
+
+#container {
+	margin:100px auto;
+	padding:10px;
+	width:700px;
+	border:1px solid #ccc;
+	}
+
+#slider {
+	display:block;
+	width:100%;
+	height:300px;
+	padding:0;
+	margin:0 0 10px;
+	overflow:hidden;
+	}
+
+#slider .slide {
+	display:none;
+	}
+
+#slider .selected {
+	display:block;
+	}
+
+#prev, #next {
+	bottom:0;
+	display:block;
+	width:120px;
+	background-color:#00ABFF;
+	padding:5px;
+	border:none
+	}
+
+#prev {
+	float:left;
+	}
+
+#next {
+	float:right;
+	}
