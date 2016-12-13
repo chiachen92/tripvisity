@@ -22,7 +22,7 @@
               <li><%= link_to "New trip", new_trip_path %></li>
               <li><%= link_to "Budgets", budgets_path %></li>
                 <% else %>
-                <li><%= link_to 'Sign in', new_session_path, id: "icon" %></li>
+                <li><%= link_to 'Sign in', "/auth/facebook", id: "icon" %></li>
             <li><%= link_to 'Sign up', new_user_path, id: "icon" %></li>
           <% end %>
           </ul>
