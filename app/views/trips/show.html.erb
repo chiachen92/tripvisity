@@ -1,3 +1,4 @@
+
 <h4>Destination: <%=@trip.destination%><h4>
 <div class='row'>
   <div class='col-md-12'>
@@ -18,9 +19,9 @@
           <%= t.date_field :end_date, class: "form-control", placeholder: "Trip start date", autofocus: true%>
         </div>
         <div class= "trip-actions">
-        <%= link_to "Add Pictures", new_trip_picture_path(@trip), class: "btn btn-primary btn-xs" %>
-        <%= link_to "Edit", edit_trip_path(@trip), class: "btn btn-xs btn-primary"  %>
-        <%= link_to "Delete",trip_path(@trip), method: :delete, data: {confirm: "Are you sure you want to delete this trip?"}, class: "btn btn-xs btn-danger" %>
+        <%= link_to "Add Pictures", new_trip_picture_path(@trip), class: "btn btn-primary btn-md" %>
+        <%= link_to "Edit", edit_trip_path(@trip), class: "btn btn-md btn-primary"  %>
+        <%= link_to "Delete",trip_path(@trip), method: :delete, data: {confirm: "Are you sure you want to delete this trip?"}, class: "btn btn-md btn-danger" %>
       </div>
     <% end %>
   </div>
@@ -32,8 +33,12 @@
 <% end %>
 </div>
 
+<div class= "container">
+<h3 class id= "comments">All Comments</h3>
+</div>
 <div class="container">
-  <h3>Create New Comment</h3>
+  <div class="fb-comments" data-href="http://lvh.me:3000/trips" data-width="470" data-num-posts="2"></div>
+  <!-- <h3>Create New Comment</h3>
   <%= form_for @comment, url: trip_comments_path(@trip) do |f| %>
   <div>
     <%= f.label :body %><br>
@@ -41,10 +46,11 @@
   </div>
   <p><%= f.submit "Publish Tip"%></p>
   <% end %>
-</div>
+</div> -->
+  </div>
 
-<div class="container">
-  <h3>All Comments</h3>
+
+<!-- <div class="container">
   <% @trip.comments.each do |comment| %>
     <div class="row">
       <%= comment.body %>
@@ -58,5 +64,13 @@
       </div>
     </div>
     <hr>
-  <% end %>
-</div>
+    <% end %> -->
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=504323752911178";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>

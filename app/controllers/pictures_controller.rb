@@ -15,7 +15,8 @@ class PicturesController < ApplicationController
       flash[:notice] = "Thanks for adding a new picture!"
       redirect_to trip_path(@picture.trip)
     else
-      render new_trip_path
+      redirect_to trip_path(@trip)
+      flash[:notice] = "Please try again!"
     end
   end
 
