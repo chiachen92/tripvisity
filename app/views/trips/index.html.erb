@@ -1,13 +1,23 @@
-<h1>List all trips</h1>
-<div class="search">
+<div class="trip-index-bg"></div>
+<br>
+<h1 class="center">List all trips</h1>
+<br>
+<div class="search center">
   <%= form_tag trips_path, :method => 'get' do %>
     <p>
       <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search" %>
+      <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %>
+
+      <%# submit_tag "Search" %>
     </p>
   <% end %>
 </div>
-<% @trips.each do |trip| %>
-  <h2><%= link_to trip.destination, trip_path(trip) %></h2>
-  <% end %>
-<%= will_paginate %>
+<br>
+<div class="center">
+  <% @trips.each do |trip| %>
+    <h4 class="well col-xs-8 col-xs-offset-2"><%= link_to trip.destination, trip_path(trip) %></h4>
+    <% end %>
+  <div class="container">
+    <%= will_paginate %>
+  </div>
+</div>

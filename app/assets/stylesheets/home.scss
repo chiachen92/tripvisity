@@ -46,9 +46,11 @@
 
 }
 
+.container .center {
+  margin-top: 35px
+}
 
-.tripvisity
-{
+.tripvisity {
   font-family: "coolfont";
   font-size: 80px;
   line-height: 6.5 !important
@@ -97,13 +99,102 @@ h3
 {
   padding-top: 10px;
   color:#ffffff;
-  font-family: bold;
+  font-family: "coolfont";
+  src: url("coolfont.ttf");
   display:none;
-  margin: 0
+  margin-top: 15px
 
 }
 
 
 .about {
-    padding: 50px 0;
+  padding: 50px 0;
+}
+
+
+#about
+{
+  padding-top: 0;
+  margin-top: 0;
+  text-align:center;
+  background-color:#ffaa02;
+  height: 100px;
+  width: 100%;
+}
+
+
+.trip-pictures{
+  object-fit: cover;
+   width:100%;
+   height: 200px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+  //  &:hover{
+  //    background-color: light-blue;
+  //  }
+}
+
+// a:hover {
+//     background-color: yellow;
+// }
+
+#row{
+  width:20%
+}
+
+.row{
+  display:flex;
+  flex-wrap: wrap;
+}
+/* sets base style for each page */
+html {
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+/* set background image per page */
+@mixin full-size($opacity) {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: $opacity;
+  background-size: 100%;
+}
+.home-bg {
+background: url(home2.jpg) no-repeat center center fixed;
+}
+.new-trip-bg {
+background: url(new-trip.jpg) no-repeat center center fixed;
+@include full-size(0.5);
+}
+
+.trip-show-bg {
+background: url(trip-show) no-repeat center center fixed;
+@include full-size(0.6);
+}
+
+.trip-index-bg {
+  background: url(bg2.jpg) no-repeat center center fixed;
+  @include full-size(0.5);
+}
+.trip-cost-bg {
+background: url(budget.png) no-repeat center center fixed;
+@include full-size(0.5);
+}
+
+.row.trip-show {
+  text-align: center;
+}
+
+.alert {
+  position: absolute;
+  top: 52px;
+  z-index: 10;
+  width: 100%
 }

@@ -1,10 +1,13 @@
+<div class="trip-cost-bg"></div>
+<br>
 <h1 align = "center">Trip Cost</h1>
-<%= render 'form' %>
-<div align="center">
-<h2>How much is this trip going to cost?</h2>
-<table cellspacing='0'>
-  <table class="container">
-    <h1 class="col-md-12">Total Cost($): <%= @budget.total%></h1>
+<br>
+<div class="center"><%= render 'form' %></div>
+<h2 class="center">How much is this trip going to cost?</h2>
+<h1 class="center">Total Cost($): <%= @budget.total%></h1>
+<br>
+<div class="row">
+  <table class="container col-xs-8 col-xs-offset-2">
     <thead>
     	<tr>
     		<h2><th>Item</th></h2>
@@ -17,13 +20,12 @@
         <td><%= budget.item %></td>
         <td><%= budget.price %></td>
         <% if budget.status == true %>
-        <td><%= link_to "Bought", budget_status_index_path(budget), class: "btn btn-success btn-xs", method: :patch %></td>
+          <td><%= link_to "Bought", budget_status_index_path(budget), class: "btn btn-success btn-xs", method: :patch %></td>
         <% else %>
-        <td><%= link_to "Not Yet", budget_status_index_path(budget), class: "btn btn-primary btn-xs", method: :post  %></td>
+          <td><%= link_to "Not Yet", budget_status_index_path(budget), class: "btn btn-primary btn-xs", method: :post  %></td>
         <% end %>
         <td><%= link_to "Delete", budget, class: "glyphicon glyphicon-trash", method: :delete, data: {confirm: "Are you sure you want to delete this item?"} %></td>
-        <% end %>
+      <% end %>
     </tbody>
   </table>
-</table>
 </div>

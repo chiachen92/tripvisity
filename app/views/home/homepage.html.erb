@@ -1,10 +1,49 @@
 
-          <div class="content">
-              <h1 class= "tripvisity">Tripvisity</h1>
-          </div>
+<div class="content">
+  <h1 class= "tripvisity">Tripvisity</h1>
+  <!-- <% images = ['home2.jpg', 'acromedia.jpg', 'acromedia2.png'] %>
+  <%= carousel_for(images) %> -->
+</div>
+
 
 
 <%= render 'about' %>
+<div class= "trip-pictures">
+<div class= "row">
+  <% @trips.each do |trip| %>
+    <% trip.pictures.each_with_index do |picture, index| %>
+    <% if (index >= 0 && index < 4) %>
+      <div id= "row">
+        <a href= "/trips/<%= trip.id %>"><%= image_tag picture.image.url(:medium) %></a>
+      </div>
+    <% elsif(index >= 4 && index < 8)%>
+      <div id= "row">
+        <a href= "/trips/<%= trip.id %>"><%= image_tag picture.image.url(:medium) %></a>
+      </div>
+    <% else %>
+      <div id= "row">
+        <a href= "/trips/<%= trip.id %>"><%= image_tag picture.image.url(:medium) %></a>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
+
+<!-- <div class= "row">
+  <%= image_tag("trip2.jpg", height: 100, width: '20%') %><%= image_tag("trip3.jpg", height: 100, width: '20%') %><%= image_tag("trip5", height: 100, width: '20%') %><%= image_tag("las_vegas.jpg", height: 100, width: '20%') %><%= image_tag("Japan.jpg", height: 100, width: '20%') %>
+</div>
+
+<div class= "row">
+  <%= image_tag("singapore.jpg", height: 100, width: '20%') %><%= image_tag("paris.jpg", height: 100, width: '20%') %><%= image_tag("", height: 100, width: '20%') %><%= image_tag("trip8.jpeg", height: 100, width: '20%') %><%= image_tag("trip9.jpg", height: 100, width: '20%') %>
+
+</div>
+<div class= "row">
+  <%= image_tag("#", height: 100, width: '20%') %><%= image_tag("#", height: 100, width: '20%') %><%= image_tag("#", height: 100, width: '20%') %><%= image_tag("#", height: 100, width: '20%') %><%= image_tag("#", height: 100, width: '20%') %>
+
+</div> -->
+
 <div class= "footer">
   <div class="connect">
   <!-- <h1 style="margin:0">Connect With Us<h1> -->
@@ -20,7 +59,14 @@ mode: 'fade',
 captions: true
 });
 </script> -->
-<script src="dist/js/smooth-scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.2.0/js/smooth-scroll.js"></script>
+<a data-scroll href="#bazinga">Anchor Link</a>
+...
+<span id="bazinga">Bazinga!</span>
+<script>
+    smoothScroll.init();
+</script>
+
 <script type= "text/javascript">
   $(document).ready(function () {
     $('.flexslider').flexslider({

@@ -2,3 +2,39 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+.trip-cost-bg {
+background: url(budget.png) no-repeat center center fixed;
+}
+
+.center {
+ text-align: center;
+}
+
+h1, h2 {
+  font-family: "coolfont";
+  src: url("coolfont.ttf");
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+#row {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+#row img {
+  margin-left: -5px;
+}
+// <%= image_tag("trip2.jpg", height: 100, width: '20%') %>
