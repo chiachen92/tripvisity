@@ -12,7 +12,6 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <!-- <li><%= link_to "About", about_path %></li> -->
           <% if params[:controller] == "home"%>
           <li><a href="#about">Get Started</a></li>
           <% else %>
@@ -27,12 +26,12 @@
               <li><%= link_to "New trip", new_trip_path %></li>
               <li><%= link_to "Budgets", budgets_path %></li>
                 <% else %>
-                <li><%= link_to 'Sign in', "/auth/facebook", id: "icon" %></li>
+                <li><%= link_to 'Sign in', new_session_path%></li>
             <li><%= link_to 'Sign up', new_user_path, id: "icon" %></li>
           <% end %>
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>

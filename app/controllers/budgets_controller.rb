@@ -1,9 +1,5 @@
 class BudgetsController < ApplicationController
 
-  # def new
-  #   @budget = Budget.new
-  # end
-
   def create
     @budget = Budget.new budget_params
     @budget.user = current_user
@@ -15,10 +11,6 @@ class BudgetsController < ApplicationController
       redirect_to budgets_path
     end
   end
-
-  # def show
-  #   @budget = Budget.find params[:id]
-  # end
 
   def index
     @budget = Budget.new
