@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
   def new
-      # renders the login form
-    end
+
+  end
 
     def create
       @user = User.find_by_email params[:email]
@@ -13,8 +13,6 @@ class SessionsController < ApplicationController
       else
         flash.now[:danger] = 'Wrong credentials'
         render :new
-
-        # @user = user for that email exists and the password is correct
       end
     end
 
