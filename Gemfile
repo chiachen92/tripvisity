@@ -33,6 +33,7 @@ gem 'omniauth'
 gem 'omniauth-facebook', '~> 4.0.0'
 gem 'stripe'
 gem 'pg'
+gem 'rails_12factor', group: :production
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
