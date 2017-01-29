@@ -24,7 +24,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="icon">Hello <%=current_user.name %><span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to "New trip", new_trip_path %></li>
-              <li><%= link_to "Budgets", budgets_path %></li>
+              <li><%= link_to "Trip Planner", budgets_path %></li>
                 <% else %>
                 <li><%= link_to 'Sign in', new_session_path%></li>
             <li><%= link_to 'Sign up', new_user_path, id: "icon" %></li>
