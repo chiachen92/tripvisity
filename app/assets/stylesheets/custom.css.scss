@@ -37,4 +37,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 #row img {
   margin-left: -5px;
 }
+
+#icon {
+  width: 160px;
+}
 // <%= image_tag("trip2.jpg", height: 100, width: '20%') %>
