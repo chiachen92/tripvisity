@@ -7,7 +7,6 @@
 
 <%= render 'about' %>
 <div class= "trip-pictures">
-<div class= "row">
   <% @trips.each do |trip| %>
     <% trip.pictures.each_with_index do |picture, index| %>
     <% if (index >= 0 && index < 4) %>
@@ -38,7 +37,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.2.0/js/smooth-scroll.js"></script>
 <a data-scroll href="#bazinga">Anchor Link</a>
 
-<span id="bazinga">Bazinga!</span>
+
 <script>
     smoothScroll.init();
 </script>
