@@ -12,13 +12,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users
   resources :budgets do
     resources :status, only: [:create] do
       patch :update, on: :collection
     end
   end
 
-  resources :users
   resources :charges
 
   resources :sessions, only: [:new, :create] do
