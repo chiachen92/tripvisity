@@ -13,6 +13,10 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   # Paperclip.storage = :s3
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :bucket => 'jenfirstapptripvisity'
+  }
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
